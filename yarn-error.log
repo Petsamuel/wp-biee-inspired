@@ -1,0 +1,63 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Users\USER\AppData\Local\Programs\Python\Python310\Scripts\;C:\Users\USER\AppData\Local\Programs\Python\Python310\;C:\Users\USER\AppData\Local\Microsoft\WindowsApps;C:\Users\USER\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.1\bin;;C:\Users\USER\AppData\Roaming\npm;C:\Users\USER\AppData\Local\Programs\Hyper\resources\bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.18.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-13.7.0.tgz: ESOCKETTIMEDOUT
+      at ClientRequest.<anonymous> (C:\Users\USER\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141517:19)
+      at Object.onceWrapper (node:events:627:28)
+      at ClientRequest.emit (node:events:513:28)
+      at TLSSocket.emitRequestTimeout (node:_http_client:839:9)
+      at Object.onceWrapper (node:events:627:28)
+      at TLSSocket.emit (node:events:525:35)
+      at TLSSocket.Socket._onTimeout (node:net:550:8)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "biee-inspired",
+    "version": "0.0.5",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "preview": "npm-run-all --parallel sync wpstart tailwindwatch",
+      "sync": "browser-sync start -p 'myexample.local' --files '**/*.php' 'build/*.js' 'build/*.css'",
+      "build": "npm-run-all --sequential buildwp tailwindbuild",
+      "buildwp": "wp-scripts build src/index.js src/frontend.js",
+      "wpstart": "wp-scripts start src/index.js src/frontend.js",
+      "start": "npm-run-all --parallel wpstart tailwindwatch",
+      "tailwindbuild": "tailwindcss -i ./src/index.css -o ./build/index.css --postcss --minify",
+      "tailwindwatch": "tailwindcss -i ./src/index.css -o ./build/index.css --watch --postcss --minify",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "@wordpress/scripts": "^23.3.0",
+      "autoprefixer": "^10.4.7",
+      "browser-sync": "^2.27.10",
+      "npm-run-all": "^4.1.5",
+      "postcss": "^8.4.14",
+      "postcss-nested": "^5.0.6",
+      "tailwindcss": "^3.1.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
